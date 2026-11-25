@@ -1,0 +1,25 @@
+# Preferências do app. Estes são valores GENÉRICOS de exemplo.
+# Para usar os seus, copie só os campos que quiser mudar para data/settings.yaml (fora do Git);
+# o que estiver lá vence o que está aqui, campo a campo.
+
+salario:
+  frequencia: mensal      # semanal | quinzenal | mensal
+  dia: 5                  # mensal: dia do mês (1 a 31); semanal/quinzenal: segunda, terca, quarta, quinta ou sexta
+  tolerancia_dias: 3      # atraso aceito no crédito (feriado, fim de semana)
+
+# Valores iniciais do Plano. Só valem enquanto você não muda a meta na tela "Plano" (a partir daí,
+# o que vale é o histórico gravado no banco).
+plano:
+  aporte_mensal: 1000.00          # meta de investimento por mês, em reais
+  extra_salario: false            # semanal/quinzenal: somar à meta o pagamento extra dos meses que têm um a mais
+  colchao: 200.00                 # quanto deixar na conta corrente antes de sugerir aportes
+  reserva: 10000.00               # Reserva de emergência (valor fixo). Deixe vazio para usar toda a renda fixa
+  alvo_patrimonio:                # % do Patrimônio por classe; precisa somar 100
+    renda_fixa: 40
+    etf_global: 20
+    etf_brasil: 15
+    acoes_nucleo: 15
+    fiis: 10
+    satelite: 0
+  rentabilidade_esperada: 0.10    # taxa anual padrão da calculadora
+  meta_rentabilidade: 0.12        # linha de meta nos gráficos de rentabilidade

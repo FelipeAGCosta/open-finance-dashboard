@@ -1,0 +1,42 @@
+# Categoria da Pluggy (em inglês) -> nossa categoria. ÚLTIMO recurso antes de "A classificar":
+# a categorização da Pluggy é recurso de plano pago/trial e pode sumir.
+# Categorias da Pluggy sem destino seguro (ex.: Transfers, Services) ficam de fora de propósito.
+pluggy:
+  Groceries: Mercado
+  Supermarkets: Mercado
+  Eating out: Alimentação fora e delivery
+  Restaurants: Alimentação fora e delivery
+  Food delivery: Alimentação fora e delivery
+  Taxi and ride-hailing: Transporte
+  Public transportation: Transporte
+  Gas stations: Transporte
+  Parking: Transporte
+  Tolls: Transporte
+  Car rental: Transporte
+  Pharmacy: Saúde e farmácia
+  Healthcare: Saúde e farmácia
+  Hospital clinics and labs: Saúde e farmácia
+  Education: Educação
+  Digital services: Assinaturas e serviços digitais
+  Music streaming: Assinaturas e serviços digitais
+  Video streaming: Assinaturas e serviços digitais
+  Telecommunications: Contas da casa
+  Internet: Contas da casa
+  Water: Contas da casa
+  Electricity: Contas da casa
+  Gas: Contas da casa
+  Rent: Moradia
+  Housing: Moradia
+  Leisure: Lazer e entretenimento
+  Entertainment: Lazer e entretenimento
+  Gyms and fitness centers: Cuidados pessoais
+  # "Shopping" fica de fora: a Pluggy usa para estabelecimentos muito diferentes entre si.
+  Electronics: Compras e eletrônicos
+  Clothing: Vestuário
+  Donations: Presentes e doações
+  Tax on financial operations: Impostos e taxas
+  Taxes: Impostos e taxas
+  Bank fees: Tarifas bancárias
+  Travel: Viagem
+  Accomodation: Viagem
+  Airport and airlines: Viagem

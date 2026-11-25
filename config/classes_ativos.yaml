@@ -1,0 +1,17 @@
+# Classe de cada ativo na alocação da carteira, a partir do subtipo informado pela Pluggy.
+# Classes: Tesouro, CDB/RDB, Ações, FIIs, BDR, ETF Brasil, ETF Global (o que não estiver no mapa vai
+# para "Outros"). A Pluggy não informa a região do ETF: o padrão é "ETF Brasil"; corrija os globais
+# por ticker no arquivo pessoal.
+#
+# A Pluggy às vezes erra o subtipo (ex.: ETF ou FII de bolsa marcado como STOCK). Para corrigir um
+# ticker específico, use data/classes_ativos.yaml (fora do Git), no formato:
+#   tickers:
+#     ABCD11: ETF Global
+subtipos:
+  TREASURY: Tesouro
+  CDB: CDB/RDB          # inclui as Caixinhas do Nubank (RDB da Nu Financeira aparecem como CDB)
+  RDB: CDB/RDB
+  STOCK: Ações
+  REAL_ESTATE_FUND: FIIs
+  BDR: BDR
+  ETF: ETF Brasil

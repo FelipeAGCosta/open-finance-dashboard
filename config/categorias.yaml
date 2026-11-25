@@ -1,0 +1,27 @@
+# Taxonomia de categorias de DESPESA.
+# essencial: true (S), false (N) ou null (sem flag). Regras podem sobrescrever a flag por transação.
+# cor: cor FIXA da categoria em todos os gráficos (1 a 18; 0 = neutra, para "A classificar"). Paleta em
+# frontend/src/index.css (--cat-N). 18 cores não ficam todas distintas entre si; a atribuição foi escolhida para
+# separar as categorias que costumam aparecer lado a lado (checagem de pares vizinhos com o validador de
+# paleta, nos temas claro e escuro), e nome, valor e % aparecem sempre ao lado da cor. Cada gráfico mostra
+# até 7 categorias do período e agrupa o resto em "Outras" (cinza).
+categorias:
+  - {nome: Moradia, essencial: true, cor: 10}
+  - {nome: "Contas da casa", essencial: true, cor: 14}         # luz, água, gás, internet, celular
+  - {nome: Mercado, essencial: true, cor: 5}
+  - {nome: "Alimentação fora e delivery", essencial: false, cor: 11}
+  - {nome: Transporte, essencial: true, cor: 4}
+  - {nome: "Saúde e farmácia", essencial: true, cor: 17}
+  - {nome: Educação, essencial: true, cor: 3}
+  - {nome: "Assinaturas e serviços digitais", essencial: false, cor: 18}
+  - {nome: "Lazer e entretenimento", essencial: false, cor: 8}
+  - {nome: "Compras e eletrônicos", essencial: false, cor: 12}
+  - {nome: "Compras online", essencial: false, cor: 2}           # Pix a intermediários de pagamento (loja não identificada)
+  - {nome: Vestuário, essencial: false, cor: 6}
+  - {nome: "Cuidados pessoais", essencial: false, cor: 1}
+  - {nome: "Presentes e doações", essencial: false, cor: 15}
+  - {nome: "Impostos e taxas", essencial: true, cor: 16}
+  - {nome: "Tarifas bancárias", essencial: true, cor: 13}
+  - {nome: Viagem, essencial: false, cor: 9}
+  - {nome: "Transferências para pessoas", essencial: false, cor: 7}  # Pix/TED a pessoa física; regras pessoais refinam
+  - {nome: "A classificar", essencial: null, cor: 0}

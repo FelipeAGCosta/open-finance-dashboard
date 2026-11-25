@@ -1,0 +1,40 @@
+# EXEMPLO de regras PESSOAIS (todos os nomes abaixo são FICTÍCIOS).
+# As suas regras reais ficam em data/regras_pessoais.yaml, que está fora do Git:
+# lá vão nomes de pessoas, lugares e estabelecimentos específicos seus.
+#
+# Formato igual ao de config/regras_base.yaml; as regras pessoais vêm ANTES das regras base.
+#   contem:    texto(s) procurados na descrição/contraparte (sem acento, maiúsculas indiferentes;
+#              palavra/frase inteira; termine com * para casar o começo da palavra).
+#   exceto:    opcional; texto(s) que, se aparecerem, impedem a regra.
+#   categoria: categoria de config/categorias.yaml.
+#   essencial: opcional (true/false).
+#   tipo:      opcional; força o tipo de movimento: receita, despesa, transferencia_interna,
+#              aporte, resgate, renda_investimento, estorno, pagamento_fatura.
+#   sentido:   opcional; "saida" ou "entrada".
+#   conta:     opcional; "corrente" ou "cartao".
+
+regras:
+  # Pix do aluguel para o proprietário (pessoa física) vira Moradia, essencial.
+  - contem: FULANO DE TAL EXEMPLO
+    sentido: saida
+    categoria: Moradia
+    essencial: true
+
+  # Diarista recorrente.
+  - contem: [BELTRANA EXEMPLO]
+    sentido: saida
+    categoria: Moradia
+
+  # Transferência para a minha conta em outro banco: não é despesa nem receita.
+  - contem: [CICLANO EXEMPLO]
+    tipo: transferencia_interna
+
+  # Pix que um amigo me devolve de um jantar dividido: abate a despesa, não é receita.
+  - contem: [AMIGO FICTICIO]
+    sentido: entrada
+    tipo: estorno
+    categoria: Alimentação fora e delivery
+
+  # Estabelecimento específico do seu bairro.
+  - contem: [PADARIA DA ESQUINA EXEMPLO]
+    categoria: Alimentação fora e delivery

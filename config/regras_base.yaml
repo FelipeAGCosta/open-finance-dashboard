@@ -1,0 +1,121 @@
+# Regras BASE (versionadas): padrões GENÉRICOS de estabelecimentos. Nada pessoal aqui:
+# nomes de pessoas, lugares e estabelecimentos específicos vão em data/regras_pessoais.yaml.
+#
+# Como cada regra funciona
+#   contem:    texto ou lista de textos procurados na descrição + contraparte + estabelecimento.
+#              Ignora maiúsculas/acentos e pontuação ("Apple.Com/Bill" vira "APPLE COM BILL").
+#              Casa palavra ou frase INTEIRA; termine com * para casar o começo da palavra
+#              (ex.: "DROGA*" casa DROGARIA e DROGASIL).
+#   exceto:    opcional; texto(s) que, se aparecerem, impedem a regra (ex.: MERCADO, exceto MERCADO PAGO).
+#   categoria: uma das categorias de config/categorias.yaml.
+#   essencial: opcional (true/false); se omitido, vale a flag da categoria.
+#   tipo:      opcional; força o tipo de movimento (receita, despesa, transferencia_interna, ...).
+#   sentido:   opcional; "saida" ou "entrada" (a regra só vale nesse sentido).
+#   conta:     opcional; "corrente" ou "cartao".
+# A PRIMEIRA regra que casar vence: deixe as mais específicas em cima. O texto principal é a
+# descrição + a contraparte; o nome do estabelecimento informado pela Pluggy só é usado quando
+# nenhuma regra casa no texto principal.
+
+regras:
+  # --- mais específicas primeiro (evitam conflito com regras genéricas abaixo) ---
+  - contem: [UBER EATS]
+    categoria: Alimentação fora e delivery
+  - contem: [MERCADO LIVRE, MERCADOLIVRE, MERCADOLIVR*]
+    categoria: Compras e eletrônicos
+  - contem: [AMAZON PRIME, PRIME VIDEO, PRIMEVIDEO, KINDLE UNLTD]
+    categoria: Assinaturas e serviços digitais
+  - contem: [MULTA*]
+    categoria: Impostos e taxas
+  - contem: [99 FOOD, 99FOOD]
+    categoria: Alimentação fora e delivery
+  - contem: [MAGALUPAY, SHPP BRASIL, SHOPEE]
+    categoria: Compras e eletrônicos
+
+  # --- Compras online: intermediários de pagamento (o extrato mostra o intermediário, não a loja) ---
+  - contem: [MERCADO PAGO, MERCADOPAGO, PAGSEGURO, PAGSEG*, PAGBANK, SAFETYPAY,
+             EBANX, DLOCAL, PAYPAL, PICPAY, ASAAS, IUGU, ADYEN, INSTITUICAO DE PAGAMENTO, FACILITADORA DE PAGAMENTO*]
+    sentido: saida
+    conta: corrente  # no cartão, o MCC da loja informa mais que o intermediário
+    categoria: Compras online
+
+  # --- Transporte ---
+  - contem: [UBER TRIP, UBERRIDES, AR UBER, UBER BR, UBER DO BRASIL, 99 TECNOLOGIA, 99APP, 99 POP, 99POP, CABIFY, INDRIVE,
+             POSTO*, AUTO POSTO, COMBUSTIVE*, SHELL, IPIRANGA, PETROBRAS, RAIZEN,
+             ESTACIONAMENTO*, ESTAPAR, SEM PARAR, CONECTCAR, VELOE, PEDAGIO*,
+             METRO, BILHETE UNICO, LOCALIZA, MOVIDA, UNIDAS]
+    categoria: Transporte
+
+  # --- Alimentação fora e delivery ---
+  - contem: [IFOOD, IFD, RAPPI, ZE DELIVERY, AIQFOME, RESTAURANTE*, LANCHONETE*, PIZZARIA*, HAMBURGUER*, BURGER*,
+             MCDONALDS, MC DONALDS, SUBWAY, STARBUCKS, OUTBACK, CHURRASCARIA*, SORVETERIA*, CAFETERIA*, BAR, BOTECO*,
+             CHOPERIA*, CERVEJARIA*, DINER, PUB]
+    categoria: Alimentação fora e delivery
+
+  # --- Mercado ---
+  - contem: [SUPERMERCADO*, HIPERMERCADO*, ATACADAO, ATACADISTA, ASSAI, MERCEARIA*, HORTIFRUTI*, ACOUGUE*, PADARIA*,
+             CARREFOUR, PAO DE ACUCAR, FORT ATACADISTA, SONDA, OXXO, MERCADO]
+    exceto: [MERCADO PAGO, MERCADOPAGO, MERCADO LIVRE, MERCADO BITCOIN]
+    categoria: Mercado
+
+  # --- Saúde e farmácia ---
+  - contem: [DROGA*, FARMACIA*, PANVEL, DROGASIL, DROGA RAIA, PACHECO, PAGUE MENOS, HOSPITAL*, CLINICA*, LABORATORIO*,
+             UNIMED, HAPVIDA, AMIL, ODONTO*, DENTIST*]
+    categoria: Saúde e farmácia
+
+  # --- Educação ---
+  - contem: [ESCOLA*, COLEGIO*, FACULDADE*, UNIVERSIDADE*, CENTRO UNIVERSITARIO*, CENTRO DE ESTUDOS SUPERIORES*,
+             EDUCACAO INFANTIL, CURSO*, UDEMY, ALURA, COURSERA, DUOLINGO, LIVRARIA*]
+    categoria: Educação
+
+  # --- Assinaturas e serviços digitais ---
+  # Cobranças no cartão costumam vir como "EMPRESA* PRODUTO" (ex.: "Apple.Com/Bill" = iCloud/App Store).
+  - contem: [NETFLIX, SPOTIFY, DISNEY*, HBO*, YOUTUBE*, YT PREMIUM, GOOGLE YOUTUBE, GOOGLE ONE, GOOGLE STORAGE,
+             GOOGLE PLAY, APPLE COM, APPLECOMBILL, APPLE, ICLOUD, ITUNES, MICROSOFT*, ADOBE*, DEEZER, GLOBOPLAY,
+             PARAMOUNT*, CANVA, NOTION, DROPBOX, GITHUB]
+    categoria: Assinaturas e serviços digitais
+
+  # --- Contas da casa ---
+  - contem: [CONTA VIVO, VIVO, CLARO, TIM, OI FIBRA, OI MOVEL, ENEL, COPEL, CEMIG, CPFL, EQUATORIAL, ENERGISA,
+             NEOENERGIA, COELBA, SABESP, COPASA, SANEPAR, CEDAE, EMBASA, COMGAS, NATURGY, ULTRAGAZ, LIQUIGAS,
+             SUPERGASBRAS]
+    categoria: Contas da casa
+
+  # --- Moradia ---
+  - contem: [ALUGUEL*, CONDOMINIO*, IMOBILIARIA*, QUINTOANDAR, QUINTO ANDAR]
+    categoria: Moradia
+
+  # --- Lazer e entretenimento ---
+  - contem: [CINEMA*, CINEMARK, INGRESSO*, SYMPLA, EVENTIM, TICKETMASTER, STEAM*, PLAYSTATION, XBOX, NINTENDO, TEATRO*]
+    categoria: Lazer e entretenimento
+
+  # --- Compras e eletrônicos ---
+  - contem: [AMAZON, AMAZON MARKETPLACE, SHOPEE, SHEIN, ALIEXPRESS, MAGALU, MAGAZINE LUIZA, AMERICANAS, KABUM,
+             CASAS BAHIA, LEROY MERLIN, TOK STOK]
+    categoria: Compras e eletrônicos
+
+  # --- Vestuário ---
+  - contem: [RENNER, RIACHUELO, C A, CEA, ZARA, HERING, CENTAURO, NETSHOES, NIKE, ADIDAS, DECATHLON]
+    categoria: Vestuário
+
+  # --- Cuidados pessoais ---
+  - contem: [BARBEARIA*, BARBER*, SALAO*, CABELEIREIR*, ESTETICA*, SPA, BOTICARIO, NATURA, SEPHORA, SMART FIT, SMARTFIT,
+             ACADEMIA*, BLUEFIT, BODYTECH, GYMPASS, WELLHUB]
+    categoria: Cuidados pessoais
+
+  # --- Presentes e doações ---
+  - contem: [DOACAO*, VAKINHA, FLORICULTURA*]
+    categoria: Presentes e doações
+
+  # --- Impostos e taxas ---
+  - contem: [IOF, DARF, IPVA, IPTU, DETRAN*, RECEITA FEDERAL, MINISTERIO DA FAZENDA, SECRETARIA DA FAZENDA,
+             SECRETARIA DE ESTADO DA FAZENDA, LICENCIAMENTO]
+    categoria: Impostos e taxas
+
+  # --- Tarifas bancárias ---
+  - contem: [TARIFA*, ANUIDADE*, JUROS*, ENCARGOS*, MORA]
+    categoria: Tarifas bancárias
+
+  # --- Viagem ---
+  - contem: [LATAM, GOL LINHAS, AZUL LINHAS, AIRBNB, BOOKING*, HOTEL*, POUSADA*, DECOLAR, CVC, 123MILHAS, MAXMILHAS, HURB,
+             CRUZEIRO*, SMILES, SEGURO VIAGEM]
+    categoria: Viagem

@@ -1,0 +1,27 @@
+# Credenciais: nunca versionar
+.env
+.env.*
+!.env.example
+
+# Dados financeiros, banco local, backups, logs e preferências pessoais: tudo fica em data/
+data/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+.pytest_cache/
+.ruff_cache/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/test-results/
+
+# Editor e sistema
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

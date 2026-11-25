@@ -1,0 +1,77 @@
+# MCC (Merchant Category Code, vem nas compras do cartão) -> categoria.
+# Chave: um código ("5411") ou uma faixa ("3000-3299"). Usado depois das regras pessoais e base.
+mcc:
+  "5411": Mercado
+  "5422": Mercado
+  "5441": Mercado
+  "5451": Mercado
+  "5462": Mercado
+  "5499": Mercado
+  "5811": Alimentação fora e delivery
+  "5812": Alimentação fora e delivery
+  "5813": Alimentação fora e delivery
+  "5814": Alimentação fora e delivery
+  "5921": Alimentação fora e delivery
+  "4111": Transporte
+  "4121": Transporte
+  "4131": Transporte
+  "4784": Transporte
+  "5541": Transporte
+  "5542": Transporte
+  "7512": Transporte
+  "7523": Transporte
+  "5912": Saúde e farmácia
+  "8011": Saúde e farmácia
+  "8021": Saúde e farmácia
+  "8042": Saúde e farmácia
+  "8062": Saúde e farmácia
+  "8071": Saúde e farmácia
+  "8099": Saúde e farmácia
+  "5942": Educação
+  "8211": Educação
+  "8220": Educação
+  "8241": Educação
+  "8244": Educação
+  "8249": Educação
+  "8299": Educação
+  "4899": Assinaturas e serviços digitais
+  "5815": Assinaturas e serviços digitais
+  "5816": Assinaturas e serviços digitais
+  "5817": Assinaturas e serviços digitais
+  "5818": Assinaturas e serviços digitais
+  "5734": Assinaturas e serviços digitais
+  "5735": Assinaturas e serviços digitais
+  "4814": Contas da casa
+  "4900": Contas da casa
+  "7832": Lazer e entretenimento
+  "7922": Lazer e entretenimento
+  "7929": Lazer e entretenimento
+  "7991": Lazer e entretenimento
+  "7996": Lazer e entretenimento
+  "7999": Lazer e entretenimento
+  "5732": Compras e eletrônicos
+  "5200": Compras e eletrônicos
+  "5251": Compras e eletrônicos
+  "5310": Compras e eletrônicos
+  "5311": Compras e eletrônicos
+  "5331": Compras e eletrônicos
+  "5399": Compras e eletrônicos
+  "5712": Compras e eletrônicos
+  "5722": Compras e eletrônicos
+  "5999": Compras e eletrônicos
+  "5611-5699": Vestuário
+  "7230": Cuidados pessoais
+  "7298": Cuidados pessoais
+  "5977": Cuidados pessoais
+  "7997": Cuidados pessoais
+  "5947": Presentes e doações
+  "5992": Presentes e doações
+  "8398": Presentes e doações
+  "9311": Impostos e taxas
+  "9399": Impostos e taxas
+  "3000-3299": Viagem
+  "3501-3999": Viagem
+  "4411": Viagem
+  "4511": Viagem
+  "4722": Viagem
+  "7011": Viagem
