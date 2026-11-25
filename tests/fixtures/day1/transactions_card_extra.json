@@ -1,0 +1,28 @@
+[
+  {
+    "id": "00000000-0000-4000-8000-0000000000e1",
+    "accountId": "00000000-0000-4000-8000-0000000000c1",
+    "date": "2026-01-09T03:00:00.000Z",
+    "description": "Mercado Exemplo",
+    "amount": 45.0,
+    "currencyCode": "BRL",
+    "type": "DEBIT",
+    "status": "PENDING",
+    "category": "Groceries",
+    "createdAt": "2026-01-09T04:00:00.000Z",
+    "updatedAt": "2026-01-09T04:00:00.000Z"
+  },
+  {
+    "id": "00000000-0000-4000-8000-0000000000e2",
+    "accountId": "00000000-0000-4000-8000-0000000000c1",
+    "date": "2026-01-09T03:00:00.000Z",
+    "description": "Assinatura Exemplo",
+    "amount": 19.9,
+    "currencyCode": "BRL",
+    "type": "DEBIT",
+    "status": "PENDING",
+    "category": "Digital services",
+    "createdAt": "2026-01-09T04:00:00.000Z",
+    "updatedAt": "2026-01-09T04:00:00.000Z"
+  }
+]

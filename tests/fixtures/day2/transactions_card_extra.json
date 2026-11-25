@@ -1,0 +1,16 @@
+[
+  {
+    "id": "00000000-0000-4000-8000-0000000000d5",
+    "accountId": "00000000-0000-4000-8000-0000000000c1",
+    "date": "2026-01-09T03:00:00.000Z",
+    "description": "Mercado Exemplo",
+    "amount": 45.0,
+    "currencyCode": "BRL",
+    "type": "DEBIT",
+    "status": "POSTED",
+    "category": "Groceries",
+    "creditCardMetadata": {"payeeMCC": 5411, "paymentType": "SINGLE"},
+    "createdAt": "2026-01-11T04:00:00.000Z",
+    "updatedAt": "2026-01-11T04:00:00.000Z"
+  }
+]

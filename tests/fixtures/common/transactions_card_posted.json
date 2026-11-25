@@ -1,0 +1,66 @@
+[
+  {
+    "id": "00000000-0000-4000-8000-0000000000d1",
+    "accountId": "00000000-0000-4000-8000-0000000000c1",
+    "date": "2026-01-03T03:00:00.000Z",
+    "description": "Loja Exemplo Online",
+    "amount": 89.9,
+    "currencyCode": "BRL",
+    "type": "DEBIT",
+    "status": "POSTED",
+    "category": "Shopping",
+    "operationType": "PAGAMENTO_A_VISTA",
+    "creditCardMetadata": {"payeeMCC": 5999, "billId": "00000000-0000-4000-8000-0000000000f1", "paymentType": "SINGLE"},
+    "createdAt": "2026-01-03T04:00:00.000Z",
+    "updatedAt": "2026-01-03T04:00:00.000Z"
+  },
+  {
+    "id": "00000000-0000-4000-8000-0000000000d2",
+    "accountId": "00000000-0000-4000-8000-0000000000c1",
+    "date": "2026-01-04T03:00:00.000Z",
+    "description": "Pagamento recebido",
+    "amount": -500.0,
+    "currencyCode": "BRL",
+    "type": "CREDIT",
+    "status": "POSTED",
+    "category": "Credit card payment",
+    "creditCardMetadata": {"billId": "00000000-0000-4000-8000-0000000000f1"},
+    "createdAt": "2026-01-04T04:00:00.000Z",
+    "updatedAt": "2026-01-04T04:00:00.000Z"
+  },
+  {
+    "id": "00000000-0000-4000-8000-0000000000d3",
+    "accountId": "00000000-0000-4000-8000-0000000000c1",
+    "date": "2026-01-05T03:00:00.000Z",
+    "description": "Servico Exemplo Inc",
+    "amount": 10.0,
+    "currencyCode": "USD",
+    "amountInAccountCurrency": 55.2,
+    "type": "DEBIT",
+    "status": "POSTED",
+    "category": "Digital services",
+    "creditCardMetadata": {"payeeMCC": 5734, "paymentType": "SINGLE"},
+    "createdAt": "2026-01-05T04:00:00.000Z",
+    "updatedAt": "2026-01-05T04:00:00.000Z"
+  },
+  {
+    "id": "00000000-0000-4000-8000-0000000000d4",
+    "accountId": "00000000-0000-4000-8000-0000000000c1",
+    "date": "2026-01-06T03:00:00.000Z",
+    "description": "Eletro Exemplo",
+    "amount": 100.0,
+    "currencyCode": "BRL",
+    "type": "DEBIT",
+    "status": "POSTED",
+    "category": "Electronics",
+    "creditCardMetadata": {
+      "installmentNumber": 2,
+      "totalInstallments": 3,
+      "purchaseDate": "2025-11-20T19:01:55.001Z",
+      "paymentType": "INSTALLMENT",
+      "payeeMCC": 5732
+    },
+    "createdAt": "2026-01-06T04:00:00.000Z",
+    "updatedAt": "2026-01-06T04:00:00.000Z"
+  }
+]

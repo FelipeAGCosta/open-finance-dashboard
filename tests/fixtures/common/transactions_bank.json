@@ -1,0 +1,61 @@
+[
+  {
+    "id": "00000000-0000-4000-8000-0000000000b1",
+    "accountId": "00000000-0000-4000-8000-0000000000a1",
+    "date": "2026-01-05T13:00:00.000Z",
+    "description": "Transferência enviada pelo Pix|FULANO DE TAL EXEMPLO",
+    "amount": -50.0,
+    "currencyCode": "BRL",
+    "type": "DEBIT",
+    "status": "POSTED",
+    "category": "Transfers",
+    "categoryId": "05000000",
+    "operationType": "PIX",
+    "paymentData": {"receiver": {"name": "Fulano de Tal Exemplo"}, "paymentMethod": "PIX"},
+    "createdAt": "2026-01-05T14:00:00.000Z",
+    "updatedAt": "2026-01-05T14:00:00.000Z"
+  },
+  {
+    "id": "00000000-0000-4000-8000-0000000000b2",
+    "accountId": "00000000-0000-4000-8000-0000000000a1",
+    "date": "2026-01-06T15:30:00.000Z",
+    "description": "Transferência Recebida|EMPRESA EXEMPLO LTDA",
+    "amount": 1500.0,
+    "currencyCode": "BRL",
+    "type": "CREDIT",
+    "status": "POSTED",
+    "category": "Third party transfers",
+    "operationType": "PIX",
+    "paymentData": {"payer": {"name": "Empresa Exemplo Ltda"}},
+    "createdAt": "2026-01-06T16:00:00.000Z",
+    "updatedAt": "2026-01-06T16:00:00.000Z"
+  },
+  {
+    "id": "00000000-0000-4000-8000-0000000000b3",
+    "accountId": "00000000-0000-4000-8000-0000000000a1",
+    "date": "2026-01-07T02:38:26.000Z",
+    "description": "Compra no débito|PADARIA EXEMPLO",
+    "amount": -12.34,
+    "currencyCode": "BRL",
+    "type": "DEBIT",
+    "status": "POSTED",
+    "category": "Groceries",
+    "operationType": "CARTAO",
+    "merchant": {"name": "Padaria Exemplo", "businessName": "Padaria Exemplo Ltda", "cnpj": "00000000000191"},
+    "createdAt": "2026-01-07T03:00:00.000Z",
+    "updatedAt": "2026-01-07T03:00:00.000Z"
+  },
+  {
+    "id": "00000000-0000-4000-8000-0000000000b4",
+    "accountId": "00000000-0000-4000-8000-0000000000a1",
+    "date": "2026-01-08T10:00:00.000Z",
+    "description": "Valor recebido de Investimento",
+    "amount": 0.42,
+    "currencyCode": "BRL",
+    "type": "CREDIT",
+    "status": "POSTED",
+    "category": "Third party transfers",
+    "createdAt": "2026-01-08T11:00:00.000Z",
+    "updatedAt": "2026-01-08T11:00:00.000Z"
+  }
+]
