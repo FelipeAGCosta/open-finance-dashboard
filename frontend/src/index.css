@@ -1,0 +1,219 @@
+@import "@fontsource-variable/inter";
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+ * Tokens de design. Identidade própria: grafite quente + destaque dourado ("ouro velho").
+ * Superfícies e cores de série validadas com o validador de paleta (dataviz):
+ * escuro = superfície #141518, claro = #fcfcfb. As 7 cores de série são a ordem validada para
+ * daltonismo. Categorias de despesa têm cor FIXA (--cat-1..18: as 8 validadas + 10 escolhidas por
+ * distância às demais; a atribuição separa as categorias que costumam ficar lado a lado); cada gráfico
+ * mostra até 7 categorias do período e agrupa o resto em "Outras" (cinza), sempre com nome, valor e %
+ * ao lado (a cor nunca é a única pista).
+ */
+:root {
+  --bg: #f6f5f2;
+  --bg-glow: rgba(168, 120, 31, 0.07);
+  --surface: #fcfcfb;
+  --surface-2: #f1f0ec;
+  --surface-3: #e9e8e3;
+  --border: rgba(11, 11, 11, 0.08);
+  --border-strong: rgba(11, 11, 11, 0.14);
+  --text: #0b0b0b;
+  --text-2: #52514e;
+  --muted: #7c7a74;
+  --accent: #9a6b12;
+  --accent-soft: rgba(154, 107, 18, 0.1);
+  --accent-fg: #fffaf0;
+  --grid: #e1e0d9;
+  --axis: #c3c2b7;
+  --positive: #006300;
+  --negative: #c02f2f;
+  --warning: #9a5b00;
+  --series-1: #2a78d6;
+  --series-2: #eb6834;
+  --series-3: #1baf7a;
+  --series-4: #eda100;
+  --series-5: #e87ba4;
+  --series-6: #008300;
+  --series-7: #6250d6;
+  --series-other: #a9a7a0;
+  /* Cor FIXA de cada categoria (índice em config/categorias.yaml; 0 = neutra, "A classificar") */
+  --cat-0: #6f6d66;
+  --cat-1: #2a78d6;
+  --cat-2: #eb6834;
+  --cat-3: #1baf7a;
+  --cat-4: #eda100;
+  --cat-5: #e87ba4;
+  --cat-6: #008300;
+  --cat-7: #6250d6;
+  --cat-8: #e34948;
+  --cat-9: #8f0161;
+  --cat-10: #7ab9ff;
+  --cat-11: #764002;
+  --cat-12: #135383;
+  --cat-13: #9b5e8d;
+  --cat-14: #b180fd;
+  --cat-15: #0a5f38;
+  --cat-16: #15a4c9;
+  --cat-17: #a1b369;
+  --cat-18: #69269b;
+  --goal-reserva: var(--series-3);
+  --goal-patrimonio: var(--series-7);
+  --income: #1baf7a;
+  --expense: #eb6834;
+  --shadow: 0 1px 2px rgba(11, 11, 11, 0.04), 0 8px 24px -12px rgba(11, 11, 11, 0.12);
+}
+
+.dark {
+  --bg: #0b0c0e;
+  --bg-glow: rgba(226, 184, 94, 0.06);
+  --surface: #141518;
+  --surface-2: #1b1d21;
+  --surface-3: #24272c;
+  --border: rgba(255, 255, 255, 0.07);
+  --border-strong: rgba(255, 255, 255, 0.13);
+  --text: #f0efec;
+  --text-2: #c3c2b7;
+  --muted: #8f8d86;
+  --accent: #e2b85e;
+  --accent-soft: rgba(226, 184, 94, 0.12);
+  --accent-fg: #1a1408;
+  --grid: #24262a;
+  --axis: #383835;
+  --positive: #3ecf6e;
+  --negative: #f07171;
+  --warning: #fab219;
+  --series-1: #3987e5;
+  --series-2: #d95926;
+  --series-3: #199e70;
+  --series-4: #c98500;
+  --series-5: #d55181;
+  --series-6: #0ca30c;
+  --series-7: #9085e9;
+  --series-other: #5d5c58;
+  --cat-0: #8f8d86;
+  --cat-1: #3987e5;
+  --cat-2: #d95926;
+  --cat-3: #199e70;
+  --cat-4: #c98500;
+  --cat-5: #d55181;
+  --cat-6: #0ca30c;
+  --cat-7: #9085e9;
+  --cat-8: #e66767;
+  --cat-9: #a23a82;
+  --cat-10: #2765a5;
+  --cat-11: #a64902;
+  --cat-12: #0283b4;
+  --cat-13: #964e66;
+  --cat-14: #684ec8;
+  --cat-15: #556d27;
+  --cat-16: #37a6b7;
+  --cat-17: #796006;
+  --cat-18: #b04d9c;
+  --income: #199e70;
+  --expense: #d95926;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 32px -16px rgba(0, 0, 0, 0.6);
+  color-scheme: dark;
+}
+
+@theme inline {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-text: var(--text);
+  --color-text-2: var(--text-2);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-fg: var(--accent-fg);
+  --color-positive: var(--positive);
+  --color-negative: var(--negative);
+  --color-warning: var(--warning);
+  --color-income: var(--income);
+  --color-expense: var(--expense);
+  --shadow-card: var(--shadow);
+  --radius-card: 1.25rem;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(1200px 600px at -10% -20%, var(--bg-glow), transparent 60%),
+    radial-gradient(900px 500px at 110% 0%, var(--bg-glow), transparent 55%),
+    var(--bg);
+  background-attachment: fixed;
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-feature-settings: "cv11", "ss01";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--accent-soft);
+}
+
+/* Valores monetários e células de tabela nunca quebram linha ("R$" separado do número fica feio) */
+.data-table td,
+.data-table th {
+  white-space: nowrap;
+}
+
+/* Valores que precisam alinhar em coluna (tabelas, listas, eixos) */
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Barra de rolagem discreta */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--surface-3) transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Recharts: sem contorno de foco em SVG ao clicar */
+.recharts-wrapper *:focus {
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, var(--surface-2) 0%, var(--surface-3) 50%, var(--surface-2) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
