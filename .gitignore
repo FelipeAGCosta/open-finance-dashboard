@@ -25,3 +25,15 @@ frontend/test-results/
 .idea/
 .DS_Store
 Thumbs.db
+
+# Arquivos de agentes, kit e memoria local: nunca versionar
+AGENTS.md
+CLAUDE.md
+.aie/
+.claude/
+.agents/
+docs/ai-memory/
+
+# Bancos e logs em qualquer pasta (nao so em data/)
+*.db
+*.log
