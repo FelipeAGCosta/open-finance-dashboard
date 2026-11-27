@@ -32,6 +32,10 @@ servidor.**
 
 <sub>Todas as imagens são do modo demonstração: nomes, valores e tickers são inventados.</sub>
 
+**Modo privacidade:** o botão do olho troca todos os valores em R$ por •••• (útil para mostrar a tela a alguém).
+
+![Visão geral com o modo privacidade ligado, tema escuro](docs/images/visao-geral-privacidade-escuro.png)
+
 ## Por que existe
 
 O app do banco mostra o extrato; a planilha exige disciplina para manter. Eu queria responder perguntas
