@@ -36,6 +36,14 @@ servidor.**
 
 ![Visão geral com o modo privacidade ligado, tema escuro](docs/images/visao-geral-privacidade-escuro.png)
 
+<table>
+  <tr>
+    <td><img src="docs/images/gastos-privacidade-claro.png" alt="Gastos com o modo privacidade ligado, tema claro"></td>
+    <td><img src="docs/images/investimentos-privacidade-escuro.png" alt="Investimentos com o modo privacidade ligado, tema escuro"></td>
+    <td><img src="docs/images/plano-privacidade-claro.png" alt="Plano com o modo privacidade ligado, tema claro"></td>
+  </tr>
+</table>
+
 ## Por que existe
 
 O app do banco mostra o extrato; a planilha exige disciplina para manter. Eu queria responder perguntas
