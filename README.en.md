@@ -19,6 +19,14 @@ this page is a summary.
 
 ![Overview screen with privacy mode on, dark theme](docs/images/visao-geral-privacidade-escuro.png)
 
+<table>
+  <tr>
+    <td><img src="docs/images/gastos-privacidade-claro.png" alt="Spending screen with privacy mode on, light theme"></td>
+    <td><img src="docs/images/investimentos-privacidade-escuro.png" alt="Investments screen with privacy mode on, dark theme"></td>
+    <td><img src="docs/images/plano-privacidade-claro.png" alt="Plan screen with privacy mode on, light theme"></td>
+  </tr>
+</table>
+
 ## What it does
 
 - **Syncs** checking account, credit card and investments from every connected bank into a local SQLite
