@@ -15,6 +15,10 @@ this page is a summary.
 
 ![Overview screen, dark theme (synthetic demo data)](docs/images/visao-geral-escuro.png)
 
+**Privacy mode:** the eye button masks every R$ amount as •••• (handy when sharing your screen).
+
+![Overview screen with privacy mode on, dark theme](docs/images/visao-geral-privacidade-escuro.png)
+
 ## What it does
 
 - **Syncs** checking account, credit card and investments from every connected bank into a local SQLite

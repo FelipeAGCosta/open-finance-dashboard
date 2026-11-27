@@ -42,6 +42,31 @@ for (const [theme, label] of Object.entries(themes)) {
   }
   await context.close();
 }
+
+// Modo privacidade (botão do olho): só a visão geral, no tema escuro, com os valores trocados por ••••.
+{
+  const context = await browser.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1, reducedMotion: "reduce" });
+  await context.addInitScript(() => {
+    try {
+      localStorage.setItem("findash:theme", "dark");
+      localStorage.setItem("findash:hide-values", "1");
+    } catch {
+      // about:blank não tem localStorage
+    }
+  });
+  const page = await context.newPage();
+  page.on("pageerror", (err) => errors.push(`privacidade: ${err.message}`));
+  await page.goto(`${base}/#/visao-geral`);
+  await page.waitForLoadState("networkidle");
+  await page.waitForFunction(() => !document.querySelector('[aria-busy="true"], .skeleton'), null, { timeout: 30000 });
+  await page.waitForTimeout(600);
+  const leaked = await page.evaluate(() => document.body.innerText.match(/R\$\s*-?\d[\d.,]*/g) ?? []);
+  if (leaked.length) errors.push(`privacidade: valores visíveis: ${leaked.slice(0, 5).join(", ")}`);
+  const file = `${out}/visao-geral-privacidade-escuro.png`;
+  await page.screenshot({ path: file });
+  console.log(file);
+  await context.close();
+}
 await browser.close();
 
 if (errors.length) {
