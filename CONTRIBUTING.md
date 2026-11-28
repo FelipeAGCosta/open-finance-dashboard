@@ -24,6 +24,21 @@ npm --prefix frontend run build
 
 A CI roda exatamente esses comandos.
 
+## Rodando só um teste
+
+No backend, rode um arquivo ou filtre pelo nome do teste:
+
+```bash
+pytest tests/test_plan.py
+pytest -k nome
+```
+
+No frontend, rode um arquivo específico:
+
+```bash
+npm --prefix frontend test -- src/lib/format.test.ts
+```
+
 ## Regras da casa
 
 - **Nunca** coloque dados reais em testes, fixtures, issues ou screenshots: nomes, valores, ids da Pluggy,
