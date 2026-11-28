@@ -1,9 +1,10 @@
 import { AnimatePresence, MotionConfig, motion } from "motion/react";
-import { Suspense, lazy, useState } from "react";
+import { Suspense, lazy, useEffect, useState } from "react";
 import { BottomNav, MonthNav, Sidebar, TopBar } from "@/components/Shell";
 import { Toaster } from "@/components/Toast";
 import { ErrorState, PageSkeleton } from "@/components/states";
 import { formatMonth } from "@/lib/format";
+import { pageTitle } from "@/lib/pageTitle";
 import { useMeta } from "@/lib/queries";
 import { useRoute, type Route } from "@/lib/router";
 // Cada tela é carregada sob demanda (primeira pintura mais rápida).
@@ -30,6 +31,11 @@ export default function App() {
   const current = month ?? meta.data?.current_month ?? null;
   const demo = meta.data?.demo ?? false;
   const monthly = route === "visao-geral" || route === "gastos";
+
+  // A aba do navegador acompanha a seção aberta ("Gastos · Finanças").
+  useEffect(() => {
+    document.title = pageTitle(TITLES[route].title);
+  }, [route]);
 
   return (
     <MotionConfig reducedMotion="user">
